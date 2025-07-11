@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Sadio Kanouté</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>Sadio Kanouté</h1>
+    <p>Développeur web & web mobile</p>
+    <nav class="main-nav">
+      <a href="#profil">Profil</a>
+      <a href="#competences">Compétences</a>
+      <a href="#formation">Formations</a>
+      <a href="#experience">Expériences</a>
+      <a href="#langues">Langues</a>
+      <a href="#interets">Centres d'intérêt</a>
+      <a href="https://github.com/sadio-kanoute" target="_blank">GitHub</a>
+      <a href="bloompetal/index.html" target="_blank">Projet BloomPetal</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="profil" id="profil">
+      <div class="profil-container">
+        <div class="profil-text">
+          <h2><i class="fas fa-user"></i> À propos de moi</h2>
+          <p>Actuellement en formation de Développeur web & web mobile, je suis une personne motivée, impliquée et curieuse.
+          Mon objectif est d'intégrer une équipe dynamique afin d'apprendre, évoluer et contribuer à des projets concrets et utiles.</p>
+        </div>
+        <div class="profil-photo">
+          <img src="assets/fotosadio.jpg" alt="Photo de Sadio Kanouté">
+        </div>
+      </div>
+    </section>
+
+    <section class="competences" id="competences">
+      <h2><i class="fas fa-tools"></i> Compétences techniques</h2>
+      <div class="cards">
+        <div class="card"><i class="fab fa-html5"></i><span>HTML5 / CSS3</span></div>
+        <div class="card"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="card"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
+        <div class="card"><i class="fab fa-react"></i><span>React (bases & approfondissement)</span></div>
+        <div class="card"><i class="fab fa-php"></i><span>PHP / POO</span></div>
+        <div class="card"><i class="fas fa-database"></i><span>MySQL / PostgreSQL</span></div>
+        <div class="card"><i class="fab fa-node"></i><span>Node.js (bases)</span></div>
+        <div class="card"><i class="fas fa-network-wired"></i><span>APIs REST</span></div>
+        <div class="card"><i class="fas fa-code-branch"></i><span>Git / GitHub</span></div>
+        <div class="card"><i class="fas fa-server"></i><span>Hébergement (Plesk)</span></div>
+        <div class="card"><i class="fas fa-shield-alt"></i><span>Sécurité web</span></div>
+        <div class="card"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+        <div class="card"><i class="fas fa-search"></i><span>SEO</span></div>
+        <div class="card"><i class="fas fa-box"></i><span>Docker (environnements de dev)</span></div>
+        <div class="card"><i class="fas fa-code"></i><span>Micro-framework PHP (Slim...)</span></div>
+        <div class="card"><i class="fas fa-project-diagram"></i><span>Gestion de projet (Trello, GitHub Projects)</span></div>
+      </div>
+    </section>
+
+    <section class="formation" id="formation">
+      <h2><i class="fas fa-graduation-cap"></i> Formations</h2>
+      <ul>
+        <li><a href="https://laplateforme.io/cdpi-developpeur-web-et-web-mobile/" target="_blank"><strong>CDPI Développeur Web & Web Mobile</strong> - La Plateforme (2024-2025)</a></li>
+        <li><a href="https://www.cnam.fr" target="_blank"><strong>DSP Intégrateur Web</strong> - CNAM (2024)</a></li>
+      </ul>
+    </section>
+
+    <section class="experience" id="experience">
+      <h2><i class="fas fa-briefcase"></i> Expériences</h2>
+      <ul>
+        <li>
+          <strong><a href="https://association-essor.org/" target="_blank">Stage WordPress - Association ESSOR</a></strong> (Avril - Juin 2025)<br>
+          ✓ Création et personnalisation de sites WordPress<br>
+          ✓ Optimisation SEO, intégration de plugin de dons (Charitable)<br>
+          ✓ Amélioration des performances, mise à jour de contenu
+        </li>
+      </ul>
+    </section>
+
+    <section class="langues" id="langues">
+      <h2><i class="fas fa-language"></i> Langues</h2>
+      <ul>
+        <li>Espagnol / Français (Bilingue)</li>
+        <li>Anglais (B1)</li>
+        <li>Catalan (A2)</li>
+        <li>Wolof / Soninké (langues maternelles)</li>
+      </ul>
+    </section>
+
+    <section class="interets" id="interets">
+      <h2><i class="fas fa-heart"></i> Centres d'intérêt</h2>
+      <ul>
+        <li><i class="fas fa-dumbbell"></i> Musculation</li>
+        <li><i class="fas fa-futbol"></i> Football</li>
+        <li><i class="fas fa-book"></i> Anime Manga</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sadio Kanouté - Tous droits réservés</p>
+  </footer>
+<!-- Bouton flèche remonter -->
+<a href="#" id="scrollToTop" title="Remonter en haut"><i class="fas fa-arrow-up"></i></a>
+<script>
+  const scrollBtn = document.getElementById('scrollToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  });
+
+  scrollBtn.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
