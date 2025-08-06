@@ -1,126 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Sadio Kanouté</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-
-  <header>
-    <h1>Sadio Kanouté</h1>
-    <p>Développeur web & web mobile</p>
-    <nav class="main-nav">
-      <a href="#profil">Profil</a>
-      <a href="#competences">Compétences</a>
-      <a href="#formation">Formations</a>
-      <a href="#experience">Expériences</a>
-      <a href="#langues">Langues</a>
-      <a href="#interets">Centres d'intérêt</a>
-      <a href="https://github.com/sadio-kanoute" target="_blank">GitHub</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="profil" id="profil">
-      <div class="profil-container">
-        <div class="profil-text">
-          <h2><i class="fas fa-user"></i> À propos de moi</h2>
-          <p>Actuellement en formation de Développeur web & web mobile, je suis une personne motivée, impliquée et curieuse.
-          Mon objectif est d'intégrer une équipe dynamique afin d'apprendre, évoluer et contribuer à des projets concrets et utiles.</p>
-        </div>
-        <div class="profil-photo">
-          <img src="assets/fotosadio.jpg" alt="Photo de Sadio Kanouté">
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sadio Kanouté - Développeur Web</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/yourkit.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <h1>Sadio Kanouté</h1>
+        <p>Développeur Web & Mobile — Créatif, efficace & passionné</p>
+        <a href="#projets" class="cta">Voir mes projets</a>
       </div>
-    </section>
+    </header>
 
-    <section class="competences" id="competences">
-      <h2><i class="fas fa-tools"></i> Compétences techniques</h2>
-      <div class="cards">
-        <div class="card"><i class="fab fa-html5"></i><span>HTML5 / CSS3</span></div>
-        <div class="card"><i class="fab fa-js"></i><span>JavaScript</span></div>
-        <div class="card"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
-        <div class="card"><i class="fab fa-react"></i><span>React (bases & approfondissement)</span></div>
-        <div class="card"><i class="fab fa-php"></i><span>PHP / POO</span></div>
-        <div class="card"><i class="fas fa-database"></i><span>MySQL / PostgreSQL</span></div>
-        <div class="card"><i class="fab fa-node"></i><span>Node.js (bases)</span></div>
-        <div class="card"><i class="fas fa-network-wired"></i><span>APIs REST</span></div>
-        <div class="card"><i class="fas fa-code-branch"></i><span>Git / GitHub</span></div>
-        <div class="card"><i class="fas fa-server"></i><span>Hébergement (Plesk)</span></div>
-        <div class="card"><i class="fas fa-shield-alt"></i><span>Sécurité web</span></div>
-        <div class="card"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
-        <div class="card"><i class="fas fa-search"></i><span>SEO</span></div>
-        <div class="card"><i class="fas fa-box"></i><span>Docker (environnements de dev)</span></div>
-        <div class="card"><i class="fas fa-code"></i><span>Micro-framework PHP (Slim...)</span></div>
-        <div class="card"><i class="fas fa-project-diagram"></i><span>Gestion de projet (Trello, GitHub Projects)</span></div>
-      </div>
-    </section>
-
-    <section class="formation" id="formation">
-      <h2><i class="fas fa-graduation-cap"></i> Formations</h2>
+    <nav class="navbar">
       <ul>
-        <li><a href="https://laplateforme.io/cdpi-developpeur-web-et-web-mobile/" target="_blank"><strong>CDPI Développeur Web & Web Mobile</strong> - La Plateforme (2024-2025)</a></li>
-        <li><a href="https://www.cnam.fr" target="_blank"><strong>DSP Intégrateur Web</strong> - CNAM (2024)</a></li>
-      </ul>
-    </section>
-
-    <section class="experience" id="experience">
-      <h2><i class="fas fa-briefcase"></i> Expériences</h2>
-      <ul>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li>
-          <strong><a href="https://association-essor.org/" target="_blank">Stage WordPress - Association ESSOR</a></strong> (Avril - Juin 2025)<br>
-          ✓ Création et personnalisation de sites WordPress<br>
-          ✓ Optimisation SEO, intégration de plugin de dons (Charitable)<br>
-          ✓ Amélioration des performances, mise à jour de contenu
+          <a href="https://github.com/sadio-kanoute" target="_blank">GitHub</a>
         </li>
       </ul>
-    </section>
+    </nav>
 
-    <section class="langues" id="langues">
-      <h2><i class="fas fa-language"></i> Langues</h2>
-      <ul>
-        <li>Espagnol / Français (Bilingue)</li>
-        <li>Anglais (B1)</li>
-        <li>Catalan (A2)</li>
-        <li>Wolof / Soninké (langues maternelles)</li>
-      </ul>
-    </section>
+    <main>
+      <section id="profil" class="section">
+        <div class="container row">
+          <div class="col">
+            <h2>👨🏾‍💻 À propos</h2>
+            <p>
+              Actuellement en formation à La Plateforme, je conçois des
+              interfaces modernes, responsives et dynamiques. Mon objectif :
+              allier design, performance et expérience utilisateur pour des
+              solutions web percutantes.
+            </p>
+          </div>
+          <div class="col">
+            <img
+              src="assets/fotosadio.jpg"
+              alt="Photo Sadio Kanouté"
+              class="profil-img"
+            />
+          </div>
+        </div>
+      </section>
 
-    <section class="interets" id="interets">
-      <h2><i class="fas fa-heart"></i> Centres d'intérêt</h2>
-      <ul>
-        <li><i class="fas fa-dumbbell"></i> Musculation</li>
-        <li><i class="fas fa-futbol"></i> Football</li>
-        <li><i class="fas fa-book"></i> Anime Manga</li>
-      </ul>
-    </section>
-  </main>
+      <section id="projets" class="section light">
+        <div class="container">
+          <h2>🚀 Mes Projets</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>🎤 Fan Site</h3>
+              <p>
+                Un fan-site musical dynamique avec HTML/CSS/JS. Responsive &
+                stylisé.
+              </p>
+              <a
+                href="https://sadio-kanoute.students-laplateforme.io/fan-site"
+                target="_blank"
+                >Voir le projet</a
+              >
+            </div>
+            <div class="project-card">
+              <h3>❌⭕ Morpion</h3>
+              <p>
+                Jeu morpion en JavaScript pur avec logique gagnant/défaite + UX.
+              </p>
+              <a
+                href="https://sadio-kanoute.students-laplateforme.io/jeu_morpion/"
+                target="_blank"
+                >Voir le projet</a
+              >
+            </div>
+            <div class="project-card">
+              <h3>🔐 Connexion</h3>
+              <p>
+                Formulaire de login sécurisé en PHP + MySQL avec sessions &
+                redirection.
+              </p>
+              <a
+                href="https://sadio-kanoute.students-laplateforme.io/module-connexion/"
+                target="_blank"
+                >Voir le projet</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    <p>&copy; 2025 Sadio Kanouté - Tous droits réservés</p>
-  </footer>
-<!-- Bouton flèche remonter -->
-<a href="#" id="scrollToTop" title="Remonter en haut"><i class="fas fa-arrow-up"></i></a>
-<script>
-  const scrollBtn = document.getElementById('scrollToTop');
+      <section id="competences" class="section">
+        <div class="container">
+          <h2>🛠️ Compétences</h2>
+          <div class="skills-grid">
+            <span>HTML / CSS</span>
+            <span>JavaScript / DOM</span>
+            <span>React / Vue.js</span>
+            <span>PHP / MySQL</span>
+            <span>Node.js / Express</span>
+            <span>Git / GitHub</span>
+            <span>WordPress / SEO</span>
+            <span>APIs REST</span>
+            <span>Docker / Plesk</span>
+          </div>
+        </div>
+      </section>
 
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      scrollBtn.classList.add('show');
-    } else {
-      scrollBtn.classList.remove('show');
-    }
-  });
+      <section id="contact" class="section light">
+        <div class="container">
+          <h2>📬 Contact</h2>
+          <p>Tu veux bosser avec moi ? Envoie-moi un message :</p>
+          <a href="mailto:sadio.kanoute@laplateforme.io" class="cta"
+            >Me contacter</a
+          >
+        </div>
+      </section>
+    </main>
 
-  scrollBtn.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
-</body>
+    <footer>
+      <p>© 2025 - Sadio Kanouté. Tous droits réservés.</p>
+    </footer>
+  </body>
 </html>
