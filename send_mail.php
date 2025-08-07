@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $message = htmlspecialchars($_POST['message']);
 
     if ($email) {
-        $to = "sadio.kanoute@laplateforme.io"; // Mets ici ton email
+        $to = "05kanoutesadioka@gmail.com"; 
         $subject = "Message de $nom via Portfolio";
         $headers = "From: $email\r\nReply-To: $email\r\n";
         $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
