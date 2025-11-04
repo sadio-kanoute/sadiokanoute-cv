@@ -33,7 +33,7 @@
         <li><a href="#profil">Profil</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#competences">Compétences</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" id="openContactNav">Contact</a></li>
         <li>
           <a href="https://github.com/sadio-kanoute" target="_blank">GitHub</a>
         </li>
@@ -44,7 +44,7 @@
       <section id="profil" class="section">
         <div class="container row">
           <div class="col">
-            <h2>👨🏾‍💻 À propos</h2>
+            <h2><i class="fas fa-user"></i> À propos</h2>
             <p>
               Actuellement en formation à La Plateforme, je conçois des
               interfaces modernes, responsives et dynamiques. Mon objectif :
@@ -75,73 +75,174 @@
 
       <section id="projets" class="section light">
         <div class="container">
-          <h2>🚀 Mes Projets</h2>
+          <h2><i class="fas fa-rocket"></i> Mes Projets</h2>
           <div class="projects-grid">
-            <div class="project-card">
+            <a
+              class="project-card"
+              href="https://sadio-kanoute.students-laplateforme.io/fan-site"
+              target="_blank"
+              rel="noopener"
+            >
               <h3>⚽ Fan Site Cristiano Ronaldo</h3>
               <p>
                 — Un site HTML/CSS full responsive, ultra moderne avec structure
                 propre, sémantique, animations, sections dédiées à sa carrière,
                 stats, et galerie photos.
               </p>
-              <a
-                href="https://sadio-kanoute.students-laplateforme.io/fan-site"
-                target="_blank"
-                >Voir le projet</a
-              >
-            </div>
-            <div class="project-card">
+            </a>
+
+            <a
+              class="project-card"
+              href="https://sadio-kanoute.students-laplateforme.io/jeu_morpion/"
+              target="_blank"
+              rel="noopener"
+            >
               <h3>❌⭕ Morpion</h3>
               <p>
                 Jeu Morpion 100% PHP, logique gagnant intégrée + sessions.
                 Simple, efficace et sans triche possible.
               </p>
-              <a
-                href="https://sadio-kanoute.students-laplateforme.io/jeu_morpion/"
-                target="_blank"
-                >Voir le projet</a
-              >
-            </div>
-            <div class="project-card">
+            </a>
+
+            <a
+              class="project-card"
+              href="https://sadio-kanoute.students-laplateforme.io/module-connexion/"
+              target="_blank"
+              rel="noopener"
+            >
               <h3>🔐 Connexion</h3>
               <p>
                 Formulaire de login sécurisé en PHP + MySQL avec sessions &
                 redirection.
               </p>
-              <a
-                href="https://sadio-kanoute.students-laplateforme.io/module-connexion/"
-                target="_blank"
-                >Voir le projet</a
-              >
-            </div>
+            </a>
+
+            <!-- New projects added -->
+            <a
+              class="project-card"
+              href="https://sadio-kanoute.students-laplateforme.io/memory-poo/"
+              target="_blank"
+              rel="noopener"
+            >
+              <h3>🧠 Memory — PHP POO</h3>
+              <p>
+                Jeu Memory développé en PHP orienté objet : choix du nombre de
+                paires, gestion des sessions, score et classement des meilleurs
+                joueurs. Logique côté serveur, responsive et navigation fluide.
+              </p>
+            </a>
+
+            <a
+              class="project-card"
+              href="https://sadio-kanoute.students-laplateforme.io/livre-or-mvc"
+              target="_blank"
+              rel="noopener"
+            >
+              <h3>📚 Livre d'or — MVC</h3>
+              <p>
+                Livre d'or en architecture MVC : gestion utilisateurs
+                (inscription, connexion, profil) et commentaires. Interface
+                claire, sécurité basique et navigation fluide.
+              </p>
+            </a>
+
+            <a
+              class="project-card"
+              href="https://sadio-kanoute.students-laplateforme.io/o_clock/"
+              target="_blank"
+              rel="noopener"
+            >
+              <h3>🕒 O'Clock</h3>
+              <p>
+                Minuteur, chronomètre, horloge (UTC+1) et réveil multiple.
+                Contrôles intuitifs, alertes et interface responsive pour une
+                navigation fluide.
+              </p>
+            </a>
           </div>
         </div>
       </section>
 
       <section id="competences" class="section">
         <div class="container">
-          <h2>🛠️ Compétences</h2>
+          <h2><i class="fas fa-tools"></i> Compétences</h2>
           <div class="skills-grid">
-            <span>HTML / CSS</span>
-            <span>JavaScript / DOM</span>
-            <span>React / Vue.js</span>
-            <span>PHP / MySQL</span>
-            <span>Node.js / Express</span>
-            <span>Git / GitHub</span>
-            <span>WordPress / SEO</span>
-            <span>APIs REST</span>
-            <span>Docker / Plesk</span>
+            <div class="skill">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-js-square"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-vuejs"></i>
+              <span>Vue.js</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-php"></i>
+              <span>PHP</span>
+            </div>
+            <div class="skill">
+              <i class="fas fa-database"></i>
+              <span>MySQL</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-node-js"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-github"></i>
+              <span>Git / GitHub</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-wordpress"></i>
+              <span>WordPress</span>
+            </div>
+            <div class="skill">
+              <i class="fas fa-search"></i>
+              <span>SEO</span>
+            </div>
+            <div class="skill">
+              <i class="fas fa-plug"></i>
+              <span>APIs / REST</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-docker"></i>
+              <span>Docker</span>
+            </div>
+            <div class="skill">
+              <i class="fas fa-server"></i>
+              <span>Plesk / Hosting</span>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="contact" class="section light">
         <div class="container">
-          <h2>📬 Contact</h2>
+          <h2><i class="fas fa-envelope"></i> Contact</h2>
           <p>Tu veux bosser avec moi ? Envoie-moi un message :</p>
-          <a href="contact.html" class="cta"
-            ><i class="fas fa-envelope"></i>Me contacter</a
-          >
+
+          <!-- Button to open contact form modal (iframe) -->
+          <div class="contact-frame-wrap">
+            <button id="openContact" class="cta">
+              <i class="fas fa-envelope"></i> Me contacter
+            </button>
+          </div>
+
+          <!-- Toast / notification shown after form submission (via postMessage from iframe) -->
+          <div id="contactToast" class="contact-toast" aria-hidden="true">
+            Message envoyé ✅
+          </div>
         </div>
       </section>
     </main>
@@ -149,5 +250,215 @@
     <footer>
       <p>© 2025 - Sadio Kanouté. Tous droits réservés.</p>
     </footer>
+
+    <!-- Contact modal with iframe (hidden until opened) -->
+    <div id="contactModal" class="contact-modal" aria-hidden="true">
+      <div class="contact-overlay" id="contactOverlay"></div>
+      <div class="contact-modal-content">
+        <button class="contact-close" id="closeContact">✕</button>
+        <iframe
+          id="contactFrame"
+          name="contactFrame"
+          src="contact.html"
+          class="contact-iframe"
+          title="Formulaire de contact"
+        ></iframe>
+      </div>
+    </div>
+    <script>
+      // Listen for messages from iframe (contact form)
+      window.addEventListener(
+        "message",
+        function (e) {
+          try {
+            var data = e.data;
+            // allow iframe to request closing the modal
+            if (data && data.action === "close") {
+              var modalToClose = document.getElementById("contactModal");
+              if (modalToClose) {
+                modalToClose.setAttribute("aria-hidden", "true");
+                modalToClose.classList.remove("open");
+                document.body.style.overflow = "";
+              }
+              return;
+            }
+            if (
+              data &&
+              (data.status === "success" || data.status === "error")
+            ) {
+              var toast = document.getElementById("contactToast");
+              if (toast) {
+                toast.textContent =
+                  data.status === "success"
+                    ? data.text || "Message envoyé ✅"
+                    : data.text || "Erreur ✖";
+                toast.classList.add("show");
+                // little confetti burst on success
+                if (data.status === 'success') {
+                  try{ createConfetti(); }catch(e){}
+                }
+                // small pulse animation on the iframe to show feedback
+                var frame = document.getElementById("contactFrame");
+                if (frame) {
+                  frame.style.transition =
+                    "transform 0.36s ease, box-shadow 0.36s ease";
+                  frame.style.transform = "scale(1.01)";
+                  setTimeout(function () {
+                    frame.style.transform = "";
+                  }, 360);
+                }
+                // Hide after 4s
+                setTimeout(function () {
+                  toast.classList.remove("show");
+                }, 4000);
+              }
+            }
+          } catch (err) {
+            console.error(err);
+          }
+        },
+        false
+      );
+
+      // Open / close contact modal
+      (function () {
+        var openBtn = document.getElementById("openContact");
+        var openNav = document.getElementById("openContactNav");
+        var modal = document.getElementById("contactModal");
+        var overlay = document.getElementById("contactOverlay");
+        var closeBtn = document.getElementById("closeContact");
+        var frame = document.getElementById("contactFrame");
+        function open() {
+          if (modal) {
+            modal.setAttribute("aria-hidden", "false");
+            modal.classList.add("open");
+            document.body.style.overflow = "hidden";
+          }
+        }
+        function close() {
+          if (modal) {
+            modal.setAttribute("aria-hidden", "true");
+            modal.classList.remove("open");
+            document.body.style.overflow = "";
+          }
+        }
+        if (openBtn)
+          openBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            // if running locally, load dev mode so UI can be tested without SMTP
+            try {
+              var h = window.location.hostname;
+              if ((h === "localhost" || h === "127.0.0.1") && frame) {
+                frame.src = "contact.html?dev=1";
+              }
+            } catch (err) {}
+            open();
+          });
+        if (openNav)
+          openNav.addEventListener("click", function (e) {
+            e.preventDefault();
+            try {
+              var h = window.location.hostname;
+              if ((h === "localhost" || h === "127.0.0.1") && frame) {
+                frame.src = "contact.html?dev=1";
+              }
+            } catch (err) {}
+            open();
+          });
+        if (overlay) overlay.addEventListener("click", close);
+        if (closeBtn) closeBtn.addEventListener("click", close);
+        // close on ESC
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") close();
+        });
+      })();
+
+      // simple confetti generator (small, dependency-free)
+      function createConfetti(){
+        var colors = ['#ff6b6b','#ffd93d','#6bf39a','#00b4d8','#8e7dff'];
+        var count = 28;
+        var container = document.createElement('div');
+        container.style.position = 'fixed';
+        container.style.left = 0;
+        container.style.top = 0;
+        container.style.width = '100%';
+        container.style.height = '100%';
+        container.style.pointerEvents = 'none';
+        container.style.overflow = 'visible';
+        container.style.zIndex = 99999;
+        document.body.appendChild(container);
+        for(var i=0;i<count;i++){
+          (function(i){
+            var el = document.createElement('div');
+            el.style.position='absolute';
+            el.style.width = (8+Math.random()*8)+'px';
+            el.style.height = (6+Math.random()*6)+'px';
+            el.style.left = (20 + Math.random()*80)+'%';
+            el.style.top = '-10%';
+            el.style.background = colors[i % colors.length];
+            el.style.opacity = 0.95;
+            el.style.transform = 'rotate('+ (Math.random()*360) +'deg)';
+            el.style.borderRadius = '2px';
+            el.style.willChange = 'transform,opacity';
+            container.appendChild(el);
+            var dur = 1200 + Math.random()*800;
+            el.animate([
+              { transform: 'translateY(0) rotate(0) translateX(0)', opacity:1 },
+              { transform: 'translateY(90vh) rotate(300deg) translateX(120px)', opacity: 0.6 }
+            ],{ duration: dur, easing: 'cubic-bezier(.2,.7,.2,1)' });
+            setTimeout(function(){ el.style.opacity=0; try{ el.remove(); }catch(e){} }, dur+100);
+          })(i);
+        }
+        setTimeout(function(){ try{ container.remove(); }catch(e){} }, 2400);
+      }
+
+      // Navbar small effect on scroll
+      (function () {
+        var nav = document.querySelector(".navbar");
+        function onScroll() {
+          if (window.scrollY > 40) nav.classList.add("scrolled");
+          else nav.classList.remove("scrolled");
+        }
+        window.addEventListener("scroll", onScroll);
+        onScroll();
+      })();
+
+      // Smooth internal link scrolling with offset for sticky navbar
+      (function () {
+        var header = document.querySelector(".navbar");
+        var headerHeight = header ? header.offsetHeight : 0;
+        // delegate clicks on in-page anchors
+        document.addEventListener(
+          "click",
+          function (e) {
+            var el = e.target;
+            // walk up to find anchor
+            while (el && el !== document.body) {
+              if (
+                el.tagName &&
+                el.tagName.toLowerCase() === "a" &&
+                el.getAttribute("href") &&
+                el.getAttribute("href").startsWith("#")
+              ) {
+                var targetId = el.getAttribute("href").slice(1);
+                var target = document.getElementById(targetId);
+                if (target) {
+                  e.preventDefault();
+                  var top =
+                    target.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    headerHeight -
+                    12; // small extra offset
+                  window.scrollTo({ top: top, behavior: "smooth" });
+                }
+                return;
+              }
+              el = el.parentNode;
+            }
+          },
+          false
+        );
+      })();
+    </script>
   </body>
 </html>

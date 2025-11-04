@@ -4,27 +4,285 @@
     <meta charset="UTF-8" />
     <title>Contact - Sadio Kanouté</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Local styles for envelope animation inside iframe */
+      .contact-wrap {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .contact-card {
+        background: white;
+        padding: 1.25rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        position: relative;
+        overflow: visible;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      /* longer fold animation so it's visible */
+      .contact-form.sending {
+        animation: foldUp 1200ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+        transform-origin: center top;
+      }
+      .contact-form.sent {
+        opacity: 0;
+      }
+      .contact-form.error {
+        animation: shake 360ms linear;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        padding: 0.8rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      .contact-form button {
+        padding: 0.8rem 1.2rem;
+        background: #00b4d8;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      @keyframes foldUp {
+        0% {
+          transform: none;
+          opacity: 1;
+        }
+        50% {
+          transform: perspective(600px) rotateX(20deg) translateY(-6px)
+            scale(0.98);
+        }
+        100% {
+          transform: translateY(-220px) scale(0.58) rotate(-8deg);
+          opacity: 0;
+        }
+      }
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translateX(-1px);
+        }
+        20%,
+        80% {
+          transform: translateX(2px);
+        }
+        30%,
+        50%,
+        70% {
+          transform: translateX(-4px);
+        }
+        40%,
+        60% {
+          transform: translateX(4px);
+        }
+      }
+      /* envelope fly animation (small element that flies out) */
+      .envelope {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 120px;
+        height: 80px;
+        margin-left: -60px;
+        margin-top: -40px;
+        background: linear-gradient(180deg, #fff, #f7f7f9);
+        border-radius: 6px;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #0077a3;
+        transform-origin: center;
+        z-index: 20;
+      }
+      @keyframes flyEnvelope {
+        0% {
+          transform: translateY(0) scale(1) rotate(0);
+          opacity: 1;
+        }
+        30% {
+          transform: translateY(-40px) scale(0.98) rotate(-6deg);
+        }
+        70% {
+          transform: translateY(-180px) translateX(90px) scale(0.7) rotate(4deg);
+          opacity: 0.85;
+        }
+        100% {
+          transform: translateY(-520px) translateX(360px) scale(0.28)
+            rotate(18deg);
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <main class="section light">
       <div class="container">
         <h2>Me contacter</h2>
-        <form action="send_mail.php" method="POST" class="contact-form">
-          <input type="text" name="nom" placeholder="Nom" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Votre message..."
-            required
-          ></textarea>
-          <button type="submit" class="cta">Envoyer</button>
-        </form>
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <form
+              action="send_mail.php"
+              method="POST"
+              class="contact-form"
+              id="mainContactForm"
+            >
+              <input type="text" name="nom" placeholder="Nom" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Votre message..."
+                required
+              ></textarea>
+              <button type="submit" class="cta">Envoyer</button>
+            </form>
+          </div>
+        </div>
 
         <div class="back-home">
-          <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+          <button id="btnBack" class="btn-back" type="button">← Retour</button>
         </div>
       </div>
     </main>
+
+    <script>
+      (function () {
+        var form = document.getElementById("mainContactForm");
+        var btnBack = document.getElementById("btnBack");
+        // message area inside iframe
+        var msgBox = document.createElement("div");
+        msgBox.id = "formMessage";
+        msgBox.className = "form-msg";
+        form.parentNode.insertBefore(msgBox, form);
+        if (!form) return;
+
+        function postToParent(status, text) {
+          try {
+            window.parent.postMessage({ status: status, text: text }, "*");
+          } catch (e) {}
+        }
+
+        if (btnBack) {
+          btnBack.addEventListener("click", function (e) {
+            e.preventDefault();
+            try {
+              window.parent.postMessage({ action: "close" }, "*");
+            } catch (e) {}
+          });
+        }
+
+        function showMessage(text, type) {
+          msgBox.textContent = text || "";
+          msgBox.classList.remove("success", "error");
+          if (type) msgBox.classList.add(type);
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // clear previous messages
+          showMessage("", null);
+          form.classList.remove("error");
+          // start envelope fold animation
+          form.classList.add("sending");
+
+          var fd = new FormData(form);
+
+          // If iframe was opened with ?dev=1, propagate dev mode to the AJAX request
+          var sendUrl = "send_mail.php";
+          try {
+            if (
+              window.location.search &&
+              window.location.search.indexOf("dev=1") !== -1
+            ) {
+              sendUrl += "?dev=1";
+              // also add debug log
+              console &&
+                console.log &&
+                console.log("DEV mode: sending to", sendUrl);
+            }
+          } catch (e) {}
+
+          fetch(sendUrl, {
+            method: "POST",
+            body: fd,
+            headers: { "X-Requested-With": "XMLHttpRequest" },
+          })
+            .then(function (res) {
+              // try parse JSON; if not JSON, fallback to text
+              var ct = res.headers.get("Content-Type") || "";
+              if (ct.indexOf("application/json") !== -1) {
+                return res.json();
+              }
+              return res.text().then(function (t) {
+                return { status: "error", text: t };
+              });
+            })
+            .then(function (json) {
+              if (json && json.status === "success") {
+                // notify parent to show toast
+                postToParent("success", json.text || "Message envoyé");
+                // show inline success message
+                showMessage(json.text || "Message envoyé", "success");
+                // create a small envelope element that flies out for visual feedback
+                try {
+                  var card = form.closest(".contact-card") || form.parentNode;
+                  var env = document.createElement("div");
+                  env.className = "envelope";
+                  env.textContent = "\u2709";
+                  card.appendChild(env);
+                  // trigger animation (longer for visibility)
+                  env.style.animation =
+                    "flyEnvelope 1400ms cubic-bezier(.2,.9,.2,1) forwards";
+                  // after animation remove envelope and reset form (wait slightly longer than animation)
+                  setTimeout(function () {
+                    if (env && env.parentNode) env.parentNode.removeChild(env);
+                    form.classList.remove("sending");
+                    form.style.transition = "opacity 300ms ease";
+                    form.style.opacity = "0";
+                    setTimeout(function () {
+                      form.reset();
+                      form.style.opacity = "";
+                      showMessage("Tu peux envoyer un nouveau message.", null);
+                    }, 320);
+                  }, 1500);
+                } catch (e) {
+                  // fallback: just reset
+                  form.classList.remove("sending");
+                  form.style.transition = "opacity 220ms ease";
+                  form.style.opacity = "0";
+                  setTimeout(function () {
+                    form.reset();
+                    form.style.opacity = "";
+                    showMessage("Tu peux envoyer un nouveau message.", null);
+                  }, 240);
+                }
+              } else {
+                // show error inside iframe (not only parent toast)
+                var text =
+                  json && json.text ? json.text : "Erreur lors de l'envoi.";
+                showMessage(text, "error");
+                form.classList.remove("sending");
+                form.classList.add("error");
+              }
+            })
+            .catch(function (err) {
+              showMessage(
+                "Erreur réseau — vérifie ta connexion ou le serveur.",
+                "error"
+              );
+              form.classList.remove("sending");
+              form.classList.add("error");
+            });
+        });
+      })();
+    </script>
   </body>
 </html>
