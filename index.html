@@ -54,6 +54,21 @@
 
             <div class="cv-download">
               <h3>📄 Mon CV</h3>
+              <a
+                class="project-card"
+                href="https://sadio-kanoute.students-laplateforme.io/memory-react/"
+                target="_blank"
+                rel="noopener"
+              >
+                <h3>⚛️ Memory — React</h3>
+                <p>
+                  Version React.js du Memory : composants réutilisables (Title,
+                  Button, Card), gestion d'état avec les hooks (useState),
+                  animation du retournement, reset de partie et message de
+                  victoire. Installation et architecture React suivies (tutoriel
+                  pas-à-pas), responsive et prête à être déployée.
+                </p>
+              </a>
               <p>
                 Découvre mon parcours et mes compétences techniques en détail.
               </p>
@@ -294,8 +309,10 @@
                     : data.text || "Erreur ✖";
                 toast.classList.add("show");
                 // little confetti burst on success
-                if (data.status === 'success') {
-                  try{ createConfetti(); }catch(e){}
+                if (data.status === "success") {
+                  try {
+                    createConfetti();
+                  } catch (e) {}
                 }
                 // small pulse animation on the iframe to show feedback
                 var frame = document.getElementById("contactFrame");
@@ -374,42 +391,61 @@
       })();
 
       // simple confetti generator (small, dependency-free)
-      function createConfetti(){
-        var colors = ['#ff6b6b','#ffd93d','#6bf39a','#00b4d8','#8e7dff'];
+      function createConfetti() {
+        var colors = ["#ff6b6b", "#ffd93d", "#6bf39a", "#00b4d8", "#8e7dff"];
         var count = 28;
-        var container = document.createElement('div');
-        container.style.position = 'fixed';
+        var container = document.createElement("div");
+        container.style.position = "fixed";
         container.style.left = 0;
         container.style.top = 0;
-        container.style.width = '100%';
-        container.style.height = '100%';
-        container.style.pointerEvents = 'none';
-        container.style.overflow = 'visible';
+        container.style.width = "100%";
+        container.style.height = "100%";
+        container.style.pointerEvents = "none";
+        container.style.overflow = "visible";
         container.style.zIndex = 99999;
         document.body.appendChild(container);
-        for(var i=0;i<count;i++){
-          (function(i){
-            var el = document.createElement('div');
-            el.style.position='absolute';
-            el.style.width = (8+Math.random()*8)+'px';
-            el.style.height = (6+Math.random()*6)+'px';
-            el.style.left = (20 + Math.random()*80)+'%';
-            el.style.top = '-10%';
+        for (var i = 0; i < count; i++) {
+          (function (i) {
+            var el = document.createElement("div");
+            el.style.position = "absolute";
+            el.style.width = 8 + Math.random() * 8 + "px";
+            el.style.height = 6 + Math.random() * 6 + "px";
+            el.style.left = 20 + Math.random() * 80 + "%";
+            el.style.top = "-10%";
             el.style.background = colors[i % colors.length];
             el.style.opacity = 0.95;
-            el.style.transform = 'rotate('+ (Math.random()*360) +'deg)';
-            el.style.borderRadius = '2px';
-            el.style.willChange = 'transform,opacity';
+            el.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+            el.style.borderRadius = "2px";
+            el.style.willChange = "transform,opacity";
             container.appendChild(el);
-            var dur = 1200 + Math.random()*800;
-            el.animate([
-              { transform: 'translateY(0) rotate(0) translateX(0)', opacity:1 },
-              { transform: 'translateY(90vh) rotate(300deg) translateX(120px)', opacity: 0.6 }
-            ],{ duration: dur, easing: 'cubic-bezier(.2,.7,.2,1)' });
-            setTimeout(function(){ el.style.opacity=0; try{ el.remove(); }catch(e){} }, dur+100);
+            var dur = 1200 + Math.random() * 800;
+            el.animate(
+              [
+                {
+                  transform: "translateY(0) rotate(0) translateX(0)",
+                  opacity: 1,
+                },
+                {
+                  transform:
+                    "translateY(90vh) rotate(300deg) translateX(120px)",
+                  opacity: 0.6,
+                },
+              ],
+              { duration: dur, easing: "cubic-bezier(.2,.7,.2,1)" }
+            );
+            setTimeout(function () {
+              el.style.opacity = 0;
+              try {
+                el.remove();
+              } catch (e) {}
+            }, dur + 100);
           })(i);
         }
-        setTimeout(function(){ try{ container.remove(); }catch(e){} }, 2400);
+        setTimeout(function () {
+          try {
+            container.remove();
+          } catch (e) {}
+        }, 2400);
       }
 
       // Navbar small effect on scroll
